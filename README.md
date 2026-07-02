@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/29607338/README.md)
 # Codex Harness Public
 
 A layered Codex harness for long-term knowledge work, reusable workflows, project bootstrapping, and project-specific AGENTS generation.
