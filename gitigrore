@@ -1,0 +1,29 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Archives
+*.zip
+*.7z
+*.rar
+
+# Python
+__pycache__/
+*.pyc
+
+# Local env
+.env
+.env.*
+
+# SQLite / local state
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Logs
+*.log
