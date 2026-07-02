@@ -163,13 +163,7 @@ This public package intentionally excludes private local state such as:
 
 If you want to publish this as your own repository, consider adding:
 
-- a `LICENSE` file such as `MIT`
+- consider adding examples / changelog
 - a short `CHANGELOG.md`
 - example project descriptions
 - example generated project-level harness outputs
-
-## Short Repository Description
-
-If you need a GitHub repository description under 350 characters, you can use:
-
-> A layered Codex harness for long-term knowledge work, reusable workflows, project bootstrapping, and project-specific AGENTS generation. Includes a global AGENTS.md, a modular knowledge-workbench, and a skill that turns project descriptions into project-root harness files.
