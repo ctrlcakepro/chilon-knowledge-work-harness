@@ -1,4 +1,4 @@
-Knowledge Work Harness for Codex
+# Knowledge Work Harness for Codex
 
 <p align="center">
   <b>A layered, maintainable, automation-aware Codex harness for real-world knowledge work.</b>
@@ -281,3 +281,5 @@ That way, before real use begins, you already know whether the harness is struct
 <summary>English</summary>
 
 If what you want is not a prompt bundle that merely looks comprehensive, but a working structure that can grow alongside real tasks and keep checking whether it has become too heavy, this package is a strong starting point. It does not pretend to be a finished product, but it already gets the important things right: layering, governance, deliverable awareness, automated maintenance, and respect for context budgets.
+
+</details>
