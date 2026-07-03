@@ -1,4 +1,0 @@
-interface:
-  display_name: "Project Harness Bootstrap"
-  short_description: "根据项目描述生成项目 harness 与 workflow"
-  default_prompt: "Use $project-harness-bootstrap to create a project-root AGENTS.md and workflow starter from this project description."
