@@ -1,127 +1,145 @@
 # Chilon Knowledge Work Harness
 
 <p align="center">
-  <b>A portable AI workbench for reading, writing, studying, summarizing, and long-term knowledge work.</b>
+  <b>把 AI 从一次性聊天窗口，变成可复用、可维护、可迁移的知识工作台。</b>
 </p>
 
 <p align="center">
-  把 AI 从一次性聊天窗口，变成可复用、可维护、可迁移的知识工作台。
+  A portable AI workbench for reading, writing, studying, summarizing, and long-term knowledge work.
 </p>
 
 ---
 
-## Why Chilon
+## Chilon 是什么？
 
-Chilon is for people who use AI for real knowledge work, not just quick answers. If you often ask an AI to read materials, summarize chapters, organize notes, plan papers, compare theories, prepare presentations, polish documents, or continue work across many sessions, you eventually run into the same problem: a single long prompt becomes messy, memory becomes unreliable, and every new task starts to feel like rebuilding the workspace from zero.
+Chilon 是一套面向长期知识工作的 AI harness。它不是单条提示词，也不是为了炫技堆出来的 agent 框架，而是一套可以放进真实学习、写作、研究和资料整理流程里的工作结构。它适合那些会反复发生的任务：读教材、整理课程材料、写论文、做文献摘要、比较理论、准备汇报、修改文档、沉淀偏好、复用模板，以及把聊天结果整理成可以继续使用的成品。
 
-Chilon solves this by turning your AI workspace into a layered harness. The top layer stays light. Workflows, memory, reusable structures, delivery rules, regression cases, and maintenance scripts live in their own places. Instead of making one prompt longer and heavier, Chilon gives your AI a working structure that can keep producing usable outputs over time.
+很多人一开始用 AI 会不断加提示词：要求越来越多，规则越来越长，最后模型反而更容易摇摆、忘记重点，或者每次都像重新开始。Chilon 的思路相反：顶层规则保持轻量，把 workflow、memory、交付规范、知识缓存、回归样例和维护脚本分层放好。这样 AI 不需要每次都吞下一整包规则，而是按任务加载最小必要上下文。
 
-Chilon 不是一个“更长的提示词合集”。它是一套面向长期知识工作的 AI 工作台结构。它适合那些会反复发生的真实任务：读书、整理课堂材料、写论文、做摘要、搭提纲、准备汇报、修改文档、沉淀偏好、复用模板、检查交付质量。它的核心目标不是让模型一次说更多，而是让模型在有限上下文里，更稳定地交付可以继续使用的结果。
-
----
-
-## What You Can Use It For
-
-- Reading summaries and textbook review
-- Study notes and concept cards
-- Literature summaries and comparison tables
-- Paper, assignment, and essay outlines
-- Presentation and slides planning
-- Document rewriting and polishing
-- Reusable knowledge-work templates
-- Long-term project memory and decision records
-- AI workspace maintenance and regression checks
-
-Chilon is especially useful when you do not want another vague answer. You want a structured note, a usable outline, a comparison table, a draft you can revise, or a workflow that remembers how you prefer to work.
+Chilon is a portable harness for long-term knowledge work. It is not a single mega-prompt or a heavy agent framework. It organizes workflows, memory, delivery rules, reusable structures, and maintenance checks so an AI workspace can keep producing usable results across repeated reading, writing, studying, and research tasks.
 
 ---
 
-## Editions
+## 它解决什么问题？
 
-Chilon now has one primary edition and one lightweight adapter.
+如果你经常用 AI 做知识工作，你大概率会遇到这些问题：
 
-| Edition | Best for | What it includes |
+- 每次都要重新解释自己的任务习惯。
+- 提示词越写越长，但效果没有稳定变好。
+- AI 能回答，但输出不像可以继续用的成品。
+- 笔记、论文、汇报、复习材料之间没有统一工作流。
+- 长期偏好和项目状态散落在聊天记录里，很难复用。
+- 一套规则改多了以后，不知道有没有把原本好用的能力改坏。
+
+Chilon 的目标不是让 AI “看起来更复杂”，而是让它更像一个有分工的知识工作台：先判断任务类型，再选择工作流，只加载必要上下文，最后产出摘要、提纲、表格、草稿、复习笔记、汇报结构或正式交付物。
+
+The core problem Chilon addresses is workspace drift. Without structure, prompts grow longer, memory becomes unreliable, and repeated work starts from zero again and again. Chilon gives the workspace a maintainable shape.
+
+---
+
+## 适合做什么？
+
+Chilon 主要面向知识工作，而不是只面向代码工作。它特别适合：
+
+- 章节总结、教材复习、课程材料整理
+- 心理学、社会科学、人文社科类学习笔记
+- 文献阅读摘要、理论比较、观点辨析
+- 论文、作业、短评、综述的提纲与初稿
+- 课堂汇报、组会汇报、slides 结构设计
+- PDF / Word 文档精炼、改写、润色与检查
+- 长期项目状态、偏好和可复用模板沉淀
+- 个人 AI 工作流、学习助手、研究助手搭建
+
+如果你想要的不是一句“建议你可以……”，而是一个能继续加工、复制、提交、复习或放进文档里的结果，Chilon 会更适合你。
+
+---
+
+## 版本说明
+
+Chilon 现在包含一个主版本和一个轻量适配包。
+
+| 版本 | 适合谁 | 包含内容 |
 |---|---|---|
-| **Chilon for Codex** | Full local harness, repository-style AI workspace, automation-aware maintenance | `AGENTS.md`, `PROJECT-WORKFLOW.md`, `.project-memory/`, tools, regression cases, automation templates, installers |
-| **Chilon for Claude Desktop** | Claude Project users who want a lighter setup for reading, writing, notes, and long-term study work | Project instructions, custom instructions, importable workflow / memory / delivery files |
+| **Chilon for Codex** | 想要完整本地 harness、项目级文件结构、自动维护和回归检查的用户 | `AGENTS.md`、`PROJECT-WORKFLOW.md`、`.project-memory/`、治理脚本、回归样例、自动化模板、安装脚本 |
+| **Chilon for Claude Desktop** | 主要使用 Claude Desktop / Claude Project，希望轻量导入知识工作结构的用户 | Project instructions、Custom instructions、可上传的 workflow / memory / delivery knowledge files |
 
-The Codex edition is the full version. The Claude Desktop adapter is not a separate project; it is a portable version of the same Chilon idea for users who work mainly inside Claude Desktop.
+Codex 版本是完整主版本。Claude Desktop 版本不是另一个独立项目，而是把同一套 Chilon 思路转换成 Claude Project 更容易使用的形式。
 
 ---
 
-## Quick Start
+## 快速开始
 
-### Option 1: Use Chilon with Codex
+### 方式一：在 Codex 项目中使用
 
-Clone the repository and install the harness into your target project.
+克隆仓库后，把 harness 安装到你的目标项目目录。
 
-On Windows, the easiest way is to double-click:
+Windows 下最简单的方式是双击：
 
 ```text
 install.cmd
 ```
 
-Or run manually:
+或者手动运行：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1 -TargetDir "C:\path\to\your\project"
 ```
 
-On macOS or Linux:
+macOS / Linux 下运行：
 
 ```bash
 chmod +x ./install.sh
 ./install.sh --target /path/to/your/project
 ```
 
-The installer copies the core harness files into your target project and backs up existing files before overwriting them.
+安装脚本会把核心 harness 文件复制到目标项目，并在覆盖同名文件前自动备份。
 
-### Option 2: Use Chilon with Claude Desktop
+### 方式二：在 Claude Desktop 中使用
 
-Open:
+打开：
 
 ```text
 adapters/claude-desktop/
 ```
 
-Recommended setup:
+推荐用法：
 
-1. Create a Claude Project, for example `Chilon Knowledge Work`.
-2. Copy `adapters/claude-desktop/project-instructions.md` into the Project instructions field.
-3. Upload the files under `adapters/claude-desktop/import-files/` as Project Knowledge.
-4. Start with a real task, such as summarizing a chapter, planning a paper, or refining a document.
+1. 在 Claude Desktop 里创建一个 Claude Project，例如 `Chilon Knowledge Work`。
+2. 把 `adapters/claude-desktop/project-instructions.md` 的内容复制到 Project instructions。
+3. 把 `adapters/claude-desktop/import-files/` 下的文件上传为 Project Knowledge。
+4. 从真实任务开始测试，例如整理一章教材、规划一篇论文、修改一份文档。
 
-For a lighter non-project setup, copy `adapters/claude-desktop/custom-instructions.md` into Claude Desktop custom instructions.
-
----
-
-## How It Works
-
-Chilon is built around a simple idea: do not load everything all the time. Keep the stable rules close, keep the details organized, and only bring in what the current task needs.
-
-### 1. Top Layer
-
-`AGENTS.md` defines the basic collaboration protocol: task routing, output style, questioning boundaries, reliability rules, and default behavior. It should stay light and stable.
-
-### 2. Workflow Layer
-
-`PROJECT-WORKFLOW.md` maps common requests into repeatable workflows: reading summary, knowledge organization, comparison, writing, presentation planning, revision, fact checking, and file-style delivery.
-
-### 3. Explicit Memory Layer
-
-`.project-memory/` stores durable project context: user preferences, project state, decisions, reusable assets, delivery rules, capability routing, and knowledge cache. It is not meant to remember everything. It is meant to remember what will actually improve future work.
-
-### 4. Governance Layer
-
-`tools/check_harness.py` and `tools/auto_cold_layer_maintenance.py` help keep the harness from becoming heavy, inconsistent, or full of broken references. The point is not only to build a workspace, but to keep it maintainable.
-
-### 5. Regression Layer
-
-`harness-regression/` stores small cases and drills that help you check whether high-frequency behavior still works after changing rules or restructuring files.
+如果你不使用 Claude Project，也可以把 `adapters/claude-desktop/custom-instructions.md` 复制到 Claude Desktop 的自定义指令里，作为轻量版使用。
 
 ---
 
-## Project Structure
+## 工作原理
+
+Chilon 的核心原则是：不要把所有东西都塞进当前上下文。稳定规则放在热路径，细节规则放在冷路径；常用 workflow 保持可复用，长期偏好显式保存，低频知识按需加载。
+
+### 1. 顶层协议：`AGENTS.md`
+
+`AGENTS.md` 定义 AI 的基本协作方式：默认输出风格、任务分流原则、追问边界、可靠性要求和文件约定。它只保留跨任务稳定成立的规则，不承载一次性补丁。
+
+### 2. 项目工作流：`PROJECT-WORKFLOW.md`
+
+`PROJECT-WORKFLOW.md` 把常见请求映射到具体流程，例如阅读总结、知识整理、比较分析、论文写作、汇报准备、文本修改、事实核对和正式文件交付。
+
+### 3. 显式记忆层：`.project-memory/`
+
+`.project-memory/` 用来保存长期偏好、项目状态、决策记录、可复用素材、交付规范、能力路由和知识缓存。重点不是“什么都记住”，而是只保存那些会稳定影响后续协作的内容。
+
+### 4. 治理脚本：`tools/`
+
+`tools/check_harness.py` 和 `tools/auto_cold_layer_maintenance.py` 用来检查结构健康、文件预算、引用完整性、冷层体量和维护优先级。Chilon 把规则本身也当作需要维护的对象，而不是默认越多越好。
+
+### 5. 回归样例：`harness-regression/`
+
+`harness-regression/` 保存最小回归样例和专项演练材料。每次修改规则、压缩 memory 或调整路由后，可以用它检查高频能力有没有被改坏。
+
+---
+
+## 项目结构
 
 ```text
 .
@@ -160,9 +178,9 @@ Chilon is built around a simple idea: do not load everything all the time. Keep 
 
 ---
 
-## Example Prompts
+## 使用示例
 
-After installing Chilon, try requests like these:
+安装或导入 Chilon 后，可以直接这样用：
 
 ```text
 把这篇文章整理成适合复习的笔记。先给主线，再给关键概念、易混点和速记版。
@@ -180,55 +198,61 @@ After installing Chilon, try requests like these:
 检查这份文档是否像一个可提交版本。先指出主要问题，再给修改方向。
 ```
 
----
-
-## Who This Is For
-
-Chilon is built for individual users who rely on AI as a long-term study, research, writing, or knowledge-management partner.
-
-It is especially suitable for:
-
-- students and researchers
-- writers and note-takers
-- people building personal AI workflows
-- users who work with textbooks, papers, documents, notes, and presentations
-- anyone who wants their AI workspace to become more stable without becoming bloated
-
-It is probably not the best fit if you only need occasional one-line answers or a fully automated production agent framework.
+```text
+基于我已有的笔记，帮我整理一个论文提纲。先给中心论点，再给章节结构和每部分要解决的问题。
+```
 
 ---
 
-## Design Principles
+## 适合谁使用？
 
-- Keep the top layer light.
-- Do not turn every idea into a global rule.
-- Store durable context explicitly.
-- Load only the context needed for the current task.
-- Prefer usable outputs over process explanations.
-- Treat memory as something to maintain, not something to blindly accumulate.
-- Make the harness portable across AI workspaces where possible.
+Chilon 适合把 AI 当作长期学习、研究、写作或知识管理伙伴的个人用户，尤其适合：
+
+- 高校学生、研究生、教师和研究者
+- 经常阅读教材、论文、报告和课程材料的人
+- 需要写作业、论文、汇报、讲稿和文档的人
+- 想搭建个人 AI 学习助手或研究助手的人
+- 不想每次从零开始写提示词的人
+- 希望 AI 输出更像成品，而不是只给建议的人
+
+它不太适合只想偶尔问一句简短问题的用户，也不是一个完整的企业级 agent 平台。
+
+---
+
+## 设计原则
+
+- 顶层规则要轻，不要把所有东西都写进一个大 prompt。
+- 任务先分流，再决定模板、工具和输出结构。
+- memory 要显式、可维护、可复查，而不是无限堆积。
+- 能用最小上下文完成的任务，不要平铺所有历史材料。
+- 输出优先像成品，而不是像过程解释。
+- 新增规则前先判断是否可以合并、下沉或删除旧规则。
+- 尽量让同一套知识工作结构迁移到不同 AI 工作台。
 
 ---
 
 ## Roadmap
 
-- [x] Public Codex harness package
-- [x] Claude Desktop adapter
-- [ ] Cherry Studio adapter
-- [ ] Fuller example workflows
-- [ ] GitHub Actions health check
-- [ ] Short demo walkthrough
+- [x] 公开 Codex harness 主版本
+- [x] Claude Desktop 适配包
+- [ ] Cherry Studio 适配包
+- [ ] 更完整的示例 workflow
+- [ ] GitHub Actions 自动健康检查
+- [ ] 5 分钟上手演示
+- [ ] 中文使用案例与截图说明
 
 ---
 
-## Why Star This Project
+## 为什么值得 Star？
 
-Star this project if you are interested in building AI workspaces that are lighter than full agent frameworks, more durable than one-off prompts, and more practical than vague productivity advice.
+如果你也觉得“不断堆提示词”不是长期方案，Chilon 可能值得一个 Star。
 
-Chilon is an attempt to make everyday AI knowledge work more structured, more reusable, and easier to maintain.
+它尝试解决的是一个很真实的问题：如何把 AI 从一次性聊天工具，变成一个能长期协作、能复用结构、能沉淀偏好、能持续交付的知识工作台。
+
+Star this project if you are interested in AI workspaces that are lighter than full agent frameworks, more durable than one-off prompts, and more practical than vague productivity advice.
 
 ---
 
 ## License
 
-Use this project as a starting point for your own knowledge-work harness. Before publishing your own modified version, remove private paths, account information, local project state, and any personal material from `.project-memory/`.
+你可以把这个项目作为自己知识工作 harness 的起点。发布自己的修改版本前，请移除 `.project-memory/` 中的私人路径、账号信息、本地项目状态和任何个人材料。
