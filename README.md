@@ -1,143 +1,127 @@
-# Knowledge Work Harness for Codex
+# Chilon Knowledge Work Harness
 
 <p align="center">
-  <b>A layered, maintainable, automation-aware Codex harness for real-world knowledge work.</b>
+  <b>A portable AI workbench for reading, writing, studying, summarizing, and long-term knowledge work.</b>
 </p>
 
 <p align="center">
-  面向阅读、写作、整理、汇报与长期协作的知识工作底座
+  把 AI 从一次性聊天窗口，变成可复用、可维护、可迁移的知识工作台。
 </p>
 
 ---
 
-## Overview｜项目概览
+## Why Chilon
 
-这不是一份为了把提示词写得更长而拼出来的配置包，而是一套为了长期协作而整理出来的工作结构。它服务的不是一次性问答，而是那些真正会反复发生的任务：读书、做笔记、整理课程材料、写论文、搭提纲、准备汇报、精炼文档、修正表达、检查交付质量。它试图解决的核心问题不是“怎样回答得更多”，而是“怎样在有限上下文里，持续稳定地做出像成品的结果”。
+Chilon is for people who use AI for real knowledge work, not just quick answers. If you often ask an AI to read materials, summarize chapters, organize notes, plan papers, compare theories, prepare presentations, polish documents, or continue work across many sessions, you eventually run into the same problem: a single long prompt becomes messy, memory becomes unreliable, and every new task starts to feel like rebuilding the workspace from zero.
 
-<details>
-<summary>English</summary>
+Chilon solves this by turning your AI workspace into a layered harness. The top layer stays light. Workflows, memory, reusable structures, delivery rules, regression cases, and maintenance scripts live in their own places. Instead of making one prompt longer and heavier, Chilon gives your AI a working structure that can keep producing usable outputs over time.
 
-This is not a package assembled to make prompts longer. It is a working structure built for long-term collaboration. It is meant for the kinds of tasks that truly repeat in real life: reading, note-taking, organizing course materials, writing papers, drafting outlines, preparing presentations, condensing documents, refining expression, and checking deliverable quality. Its core concern is not “how to say more,” but “how to keep producing stable, finished-feeling results within a limited context budget.”
-
-</details>
-
-很多个人 harness 会在变强之前先变重：规则越来越多，职责越来越乱，最后模型不是忘了执行，就是在不同规则之间摇摆。这套结构的出发点正好相反。它尽量把顶层压轻，把细节下沉到 workflow、memory、模板、回归样例和自动维护层，让系统更像一个有分工的工作台，而不是一条越来越长的提示词。
-
-<details>
-<summary>English</summary>
-
-Many personal harnesses become heavy before they become strong: more rules, blurrier responsibilities, and eventually a model that either stops following them or keeps oscillating between competing instructions. This project starts from the opposite assumption. It keeps the top layer light and pushes detail into workflows, memory, templates, regression samples, and automated maintenance, so the system feels more like a structured workbench than an endlessly growing prompt.
-
-</details>
+Chilon 不是一个“更长的提示词合集”。它是一套面向长期知识工作的 AI 工作台结构。它适合那些会反复发生的真实任务：读书、整理课堂材料、写论文、做摘要、搭提纲、准备汇报、修改文档、沉淀偏好、复用模板、检查交付质量。它的核心目标不是让模型一次说更多，而是让模型在有限上下文里，更稳定地交付可以继续使用的结果。
 
 ---
 
-## What It Is For｜适用场景
+## What You Can Use It For
 
-这套 harness 主要面向知识工作，而不是只面向代码工作。它特别适合章节总结、教材复习、论文与作业提纲、文献阅读摘要、汇报结构设计、PDF / Word 文档精炼、内容改写，以及那些“我需要一个能直接继续用的结果，而不是一堆方法解释”的请求。
+- Reading summaries and textbook review
+- Study notes and concept cards
+- Literature summaries and comparison tables
+- Paper, assignment, and essay outlines
+- Presentation and slides planning
+- Document rewriting and polishing
+- Reusable knowledge-work templates
+- Long-term project memory and decision records
+- AI workspace maintenance and regression checks
 
-<details>
-<summary>English</summary>
-
-This harness is aimed primarily at knowledge work rather than only coding work. It is especially suitable for chapter summaries, textbook review, paper and assignment outlines, literature summaries, presentation structuring, PDF or Word document condensation, content rewriting, and any request where the real need is “give me something I can keep using,” rather than “explain the method again.”
-
-</details>
-
-如果你经常在聊天窗口里重复做这些事，那么你真正需要的通常不是更多 prompt，而是更稳定的任务分流、更清楚的结构层次，以及更可靠的交付路径。这套包就是为这种需求准备的。
-
-<details>
-<summary>English</summary>
-
-If you keep repeating these tasks in a chat window, what you usually need is not more prompting, but steadier task routing, clearer structural layers, and more reliable delivery paths. That is exactly the need this package is built for.
-
-</details>
+Chilon is especially useful when you do not want another vague answer. You want a structured note, a usable outline, a comparison table, a draft you can revise, or a workflow that remembers how you prefer to work.
 
 ---
 
-## Architecture｜功能架构
+## Editions
+
+Chilon now has one primary edition and one lightweight adapter.
+
+| Edition | Best for | What it includes |
+|---|---|---|
+| **Chilon for Codex** | Full local harness, repository-style AI workspace, automation-aware maintenance | `AGENTS.md`, `PROJECT-WORKFLOW.md`, `.project-memory/`, tools, regression cases, automation templates, installers |
+| **Chilon for Claude Desktop** | Claude Project users who want a lighter setup for reading, writing, notes, and long-term study work | Project instructions, custom instructions, importable workflow / memory / delivery files |
+
+The Codex edition is the full version. The Claude Desktop adapter is not a separate project; it is a portable version of the same Chilon idea for users who work mainly inside Claude Desktop.
+
+---
+
+## Quick Start
+
+### Option 1: Use Chilon with Codex
+
+Clone the repository and install the harness into your target project.
+
+On Windows, the easiest way is to double-click:
+
+```text
+install.cmd
+```
+
+Or run manually:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -TargetDir "C:\path\to\your\project"
+```
+
+On macOS or Linux:
+
+```bash
+chmod +x ./install.sh
+./install.sh --target /path/to/your/project
+```
+
+The installer copies the core harness files into your target project and backs up existing files before overwriting them.
+
+### Option 2: Use Chilon with Claude Desktop
+
+Open:
+
+```text
+adapters/claude-desktop/
+```
+
+Recommended setup:
+
+1. Create a Claude Project, for example `Chilon Knowledge Work`.
+2. Copy `adapters/claude-desktop/project-instructions.md` into the Project instructions field.
+3. Upload the files under `adapters/claude-desktop/import-files/` as Project Knowledge.
+4. Start with a real task, such as summarizing a chapter, planning a paper, or refining a document.
+
+For a lighter non-project setup, copy `adapters/claude-desktop/custom-instructions.md` into Claude Desktop custom instructions.
+
+---
+
+## How It Works
+
+Chilon is built around a simple idea: do not load everything all the time. Keep the stable rules close, keep the details organized, and only bring in what the current task needs.
 
 ### 1. Top Layer
 
-`AGENTS.md` 负责顶层协作协议，定义默认输出风格、提问边界、任务分流原则和可靠性要求。它只保留跨任务稳定成立的规则，不承载专题 workflow、学科细节或一次性补丁。
+`AGENTS.md` defines the basic collaboration protocol: task routing, output style, questioning boundaries, reliability rules, and default behavior. It should stay light and stable.
 
-<details>
-<summary>English</summary>
+### 2. Workflow Layer
 
-`AGENTS.md` holds the top-level collaboration protocol: default output style, questioning boundaries, task-routing principles, and reliability rules. It keeps only rules that remain stable across tasks, and deliberately avoids carrying topic-specific workflows, domain detail, or one-off patches.
-
-</details>
-
-### 2. Project Workflow Layer
-
-`PROJECT-WORKFLOW.md` 负责项目级默认流程，把常见请求映射到更具体的执行路径，例如阅读总结、知识整理、比较分析、论文写作、展示准备、文本修改和文件交付。
-
-<details>
-<summary>English</summary>
-
-`PROJECT-WORKFLOW.md` defines the default project-level flows, mapping common requests into more concrete execution paths such as reading summaries, knowledge organization, comparative analysis, academic writing, presentation prep, text revision, and formal file delivery.
-
-</details>
+`PROJECT-WORKFLOW.md` maps common requests into repeatable workflows: reading summary, knowledge organization, comparison, writing, presentation planning, revision, fact checking, and file-style delivery.
 
 ### 3. Explicit Memory Layer
 
-`.project-memory/` 是显式 memory layer，用来保存长期偏好、项目状态、决策记录、知识缓存、交付规范和自动化索引。重点不在于“什么都记住”，而在于只保存那些会稳定影响后续协作的内容。
+`.project-memory/` stores durable project context: user preferences, project state, decisions, reusable assets, delivery rules, capability routing, and knowledge cache. It is not meant to remember everything. It is meant to remember what will actually improve future work.
 
-<details>
-<summary>English</summary>
+### 4. Governance Layer
 
-`.project-memory/` is the explicit memory layer. It stores durable preferences, project state, decision logs, knowledge cache, delivery specs, and automation indexes. The goal is not to remember everything, but to preserve only what will keep shaping future collaboration in a stable way.
+`tools/check_harness.py` and `tools/auto_cold_layer_maintenance.py` help keep the harness from becoming heavy, inconsistent, or full of broken references. The point is not only to build a workspace, but to keep it maintainable.
 
-</details>
+### 5. Regression Layer
 
-### 4. Governance Scripts
-
-`tools/check_harness.py` 会检查关键文件存在性、关键引用是否断裂、核心文件是否超预算、误广加载预算是否过重、全量平铺是否会明显变重，以及旧命名或实验残留是否还存在。  
-`tools/auto_cold_layer_maintenance.py` 会扫描冷层文件，估算 token 压力，识别高体量候选、近重复热点和收缩优先级，并生成每周 / 每月维护报告。
-
-<details>
-<summary>English</summary>
-
-`tools/check_harness.py` validates critical file presence, key reference integrity, file-size budgets, accidental broad-load pressure, full-flatten heaviness, and legacy naming or experimental residue.  
-`tools/auto_cold_layer_maintenance.py` scans the cold layer, estimates token pressure, identifies large candidates, near-duplicate hotspots, and compression priority, then generates weekly and monthly maintenance reports.
-
-</details>
-
-### 5. Regression and Drills
-
-`harness-regression/` 是这套结构的安全网。这里保存最小回归样例和专项演练材料，帮助你在调整规则、收缩文件或修改路由之后，确认高频能力没有被悄悄做坏。
-
-<details>
-<summary>English</summary>
-
-`harness-regression/` is the safety net for the structure. It stores minimal regression cases and targeted drills so that after changing rules, compressing files, or modifying routing, you can confirm that high-frequency capabilities have not been quietly damaged.
-
-</details>
+`harness-regression/` stores small cases and drills that help you check whether high-frequency behavior still works after changing rules or restructuring files.
 
 ---
 
-## Technical Design｜技术设计细节
-
-这套 harness 明确区分了热路径和冷路径。热路径包括 `AGENTS.md`、`PROJECT-WORKFLOW.md`、`.project-memory/README.md` 和少数几个高频路由文件，它们负责在任务开始时提供最小可用上下文。冷路径则由更细的 memory、delivery spec、knowledge cache 和回归材料组成，只在真正需要时再读取。这种设计不是装饰性的分层，而是直接服务于 token 预算控制。
-
-<details>
-<summary>English</summary>
-
-This harness explicitly separates hot paths from cold paths. The hot path includes `AGENTS.md`, `PROJECT-WORKFLOW.md`, `.project-memory/README.md`, and a small set of high-frequency routing files that provide the minimum viable context at task start. The cold path contains more detailed memory files, delivery specs, knowledge cache, and regression material, which are only read when actually needed. This is not decorative layering; it directly serves token-budget control.
-
-</details>
-
-治理逻辑上，它也不是默认“规则越多越好”。相反，它把规则本身当成需要持续检查的对象。`check_harness.py` 提供结构健康检查，`auto_cold_layer_maintenance.py` 提供冷层压缩报告，而两个 Codex 自动化任务会基于这些报告做每周轻维护和每月深检。这意味着这套系统不仅能工作，还会持续检查自己有没有变重、变乱或变得不值得继续扩张。
-
-<details>
-<summary>English</summary>
-
-From a governance perspective, the system does not assume “more rules are better.” Instead, it treats the rules themselves as something that must be inspected continuously. `check_harness.py` provides structural health checks, `auto_cold_layer_maintenance.py` provides cold-layer compression reports, and the two Codex automation jobs use those reports for weekly light maintenance and monthly deep audits. In other words, the system is designed not only to work, but to keep checking whether it has become too heavy, too messy, or no longer worth expanding.
-
-</details>
-
----
-
-## Package Structure｜目录结构
+## Project Structure
 
 ```text
 .
@@ -145,9 +129,10 @@ From a governance perspective, the system does not assume “more rules are bett
 ├─ PROJECT-WORKFLOW.md
 ├─ .project-memory/
 │  ├─ README.md
-│  ├─ decision-log.md
+│  ├─ user-preferences.md
 │  ├─ project-state.md
-│  ├─ capability-fallback-matrix.md
+│  ├─ decision-log.md
+│  ├─ reusable-assets.md
 │  ├─ tool-delivery-routing.md
 │  └─ knowledge-cache/
 ├─ tools/
@@ -159,6 +144,15 @@ From a governance perspective, the system does not assume “more rules are bett
 ├─ automations/
 │  ├─ weekly-harness-maintenance.toml
 │  └─ monthly-harness-deep-audit.toml
+├─ adapters/
+│  └─ claude-desktop/
+│     ├─ README.md
+│     ├─ project-instructions.md
+│     ├─ custom-instructions.md
+│     └─ import-files/
+│        ├─ workflow-guide.md
+│        ├─ memory-guide.md
+│        └─ delivery-style.md
 ├─ install.ps1
 ├─ install.sh
 └─ install.cmd
@@ -166,147 +160,75 @@ From a governance perspective, the system does not assume “more rules are bett
 
 ---
 
-## Installation｜安装方式
+## Example Prompts
 
-### Quick Install
+After installing Chilon, try requests like these:
 
-Windows 下最简单的安装方式是直接双击 `install.cmd`。
-
-macOS 下可以在仓库目录运行：
-
-```bash
-chmod +x ./install.sh
-./install.sh
+```text
+把这篇文章整理成适合复习的笔记。先给主线，再给关键概念、易混点和速记版。
 ```
 
-<details>
-<summary>English</summary>
-
-The simplest installation path on Windows is to double-click `install.cmd`.
-
-On macOS, run this from the repository directory:
-
-```bash
-chmod +x ./install.sh
-./install.sh
+```text
+比较这两个理论。先列比较维度，再用表格整理，最后给适用场景判断。
 ```
 
-</details>
-
-### Manual Install
-
-如果你更习惯手动指定目标目录，可以运行：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\install.ps1 -TargetDir "C:\path\to\your\project"
+```text
+帮我把这份材料改成 8 分钟课堂汇报结构。重点是讲述顺序和每页主旨。
 ```
 
-```bash
-./install.sh --target /path/to/your/project
+```text
+检查这份文档是否像一个可提交版本。先指出主要问题，再给修改方向。
 ```
-
-安装脚本会要求你输入目标项目目录，或者使用你通过参数传入的目录，然后自动安装以下内容：
-
-- `AGENTS.md`
-- `PROJECT-WORKFLOW.md`
-- `.project-memory/`
-- `harness-regression/`
-- `tools/`
-- `automations/*.toml`（默认安装）
-
-<details>
-<summary>English</summary>
-
-If you prefer to pass the target directory explicitly, run:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\install.ps1 -TargetDir "C:\path\to\your\project"
-```
-
-```bash
-./install.sh --target /path/to/your/project
-```
-
-The installer will ask for the target project directory, or use the directory you pass in, then install:
-
-- `AGENTS.md`
-- `PROJECT-WORKFLOW.md`
-- `.project-memory/`
-- `harness-regression/`
-- `tools/`
-- `automations/*.toml` (installed by default)
-
-</details>
-
-### Skip Automations
-
-如果你暂时不想安装自动化任务，可以运行：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\install.ps1 -SkipAutomations
-```
-
-```bash
-./install.sh --skip-automations
-```
-
-### Safety Behavior
-
-安装时，脚本会自动把目标目录内同名文件和目录备份到 `.harness-install-backup/<timestamp>/`，因此即使是在已有项目上覆盖安装，也保留了回退空间。
-
-<details>
-<summary>English</summary>
-
-During installation, the script automatically backs up existing files and directories with the same names into `.harness-install-backup/<timestamp>/`, so even if you install over an existing project, you still keep a rollback path.
-
-</details>
 
 ---
 
-## Recommended First Checks｜安装后建议
+## Who This Is For
 
-安装完成后，建议先运行一次结构检查：
+Chilon is built for individual users who rely on AI as a long-term study, research, writing, or knowledge-management partner.
 
-```bash
-python tools/check_harness.py
-```
+It is especially suitable for:
 
-如果你想快速看一眼冷层压力，再运行一次：
+- students and researchers
+- writers and note-takers
+- people building personal AI workflows
+- users who work with textbooks, papers, documents, notes, and presentations
+- anyone who wants their AI workspace to become more stable without becoming bloated
 
-```bash
-python tools/auto_cold_layer_maintenance.py --mode weekly
-```
-
-这样你在真正开始使用之前，就能知道这套 harness 当前是“结构健康”“接近扩张边界”还是“已经需要收缩”。
-
-<details>
-<summary>English</summary>
-
-After installation, it is a good idea to run a structural check:
-
-```bash
-python tools/check_harness.py
-```
-
-If you also want a quick view of cold-layer pressure, run:
-
-```bash
-python tools/auto_cold_layer_maintenance.py --mode weekly
-```
-
-That way, before real use begins, you already know whether the harness is structurally healthy, approaching expansion limits, or already due for compression.
-
-</details>
+It is probably not the best fit if you only need occasional one-line answers or a fully automated production agent framework.
 
 ---
 
-## Closing Note｜最后的话
+## Design Principles
 
-如果你想要的不是一个“看起来很全”的提示词合集，而是一套能随着真实任务一起成长、还能持续检查自己有没有变重的工作结构，那么这份包会是一个不错的起点。它不假装自己已经是成熟产品，但它已经把最重要的事情做对了：分层、治理、交付意识、自动维护，以及对上下文预算的尊重。
+- Keep the top layer light.
+- Do not turn every idea into a global rule.
+- Store durable context explicitly.
+- Load only the context needed for the current task.
+- Prefer usable outputs over process explanations.
+- Treat memory as something to maintain, not something to blindly accumulate.
+- Make the harness portable across AI workspaces where possible.
 
-<details>
-<summary>English</summary>
+---
 
-If what you want is not a prompt bundle that merely looks comprehensive, but a working structure that can grow alongside real tasks and keep checking whether it has become too heavy, this package is a strong starting point. It does not pretend to be a finished product, but it already gets the important things right: layering, governance, deliverable awareness, automated maintenance, and respect for context budgets.
+## Roadmap
 
-</details>
+- [x] Public Codex harness package
+- [x] Claude Desktop adapter
+- [ ] Cherry Studio adapter
+- [ ] Fuller example workflows
+- [ ] GitHub Actions health check
+- [ ] Short demo walkthrough
+
+---
+
+## Why Star This Project
+
+Star this project if you are interested in building AI workspaces that are lighter than full agent frameworks, more durable than one-off prompts, and more practical than vague productivity advice.
+
+Chilon is an attempt to make everyday AI knowledge work more structured, more reusable, and easier to maintain.
+
+---
+
+## License
+
+Use this project as a starting point for your own knowledge-work harness. Before publishing your own modified version, remove private paths, account information, local project state, and any personal material from `.project-memory/`.
