@@ -55,7 +55,7 @@ def check_contains(results: list[CheckResult], rel_path: str, needles: list[str]
 
 
 def iter_text_files() -> list[Path]:
-    suffixes = {".md", ".toml", ".ps1", ".cmd", ".py"}
+    suffixes = {".md", ".toml", ".ps1", ".cmd", ".py", ".sh"}
     ignored_parts = {".git", "__pycache__", "outputs", ".harness-install-backup"}
     files: list[Path] = []
     for path in ROOT.rglob("*"):
@@ -167,6 +167,7 @@ def main() -> int:
         "tools/auto_cold_layer_maintenance.py",
         "install.ps1",
         "install.cmd",
+        "install.sh",
     ]
     for rel_path in required_paths:
         check_exists(results, rel_path)

@@ -160,6 +160,7 @@ From a governance perspective, the system does not assume “more rules are bett
 │  ├─ weekly-harness-maintenance.toml
 │  └─ monthly-harness-deep-audit.toml
 ├─ install.ps1
+├─ install.sh
 └─ install.cmd
 ```
 
@@ -171,22 +172,40 @@ From a governance perspective, the system does not assume “more rules are bett
 
 Windows 下最简单的安装方式是直接双击 `install.cmd`。
 
+macOS 下可以在仓库目录运行：
+
+```bash
+chmod +x ./install.sh
+./install.sh
+```
+
 <details>
 <summary>English</summary>
 
 The simplest installation path on Windows is to double-click `install.cmd`.
 
+On macOS, run this from the repository directory:
+
+```bash
+chmod +x ./install.sh
+./install.sh
+```
+
 </details>
 
 ### Manual Install
 
-如果你更习惯手动执行，可以运行：
+如果你更习惯手动指定目标目录，可以运行：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install.ps1
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -TargetDir "C:\path\to\your\project"
 ```
 
-安装脚本会要求你输入目标项目目录，然后自动安装以下内容：
+```bash
+./install.sh --target /path/to/your/project
+```
+
+安装脚本会要求你输入目标项目目录，或者使用你通过参数传入的目录，然后自动安装以下内容：
 
 - `AGENTS.md`
 - `PROJECT-WORKFLOW.md`
@@ -198,13 +217,17 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 <details>
 <summary>English</summary>
 
-If you prefer a manual path, run:
+If you prefer to pass the target directory explicitly, run:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install.ps1
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -TargetDir "C:\path\to\your\project"
 ```
 
-The installer will ask for the target project directory and then install:
+```bash
+./install.sh --target /path/to/your/project
+```
+
+The installer will ask for the target project directory, or use the directory you pass in, then install:
 
 - `AGENTS.md`
 - `PROJECT-WORKFLOW.md`
@@ -221,6 +244,10 @@ The installer will ask for the target project directory and then install:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1 -SkipAutomations
+```
+
+```bash
+./install.sh --skip-automations
 ```
 
 ### Safety Behavior
